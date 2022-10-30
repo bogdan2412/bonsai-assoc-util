@@ -1,0 +1,6 @@
+(library
+ (name bonsai_assoc_util)
+ (public_name bonsai-assoc-util)
+ (libraries bonsai core)
+ (preprocess
+  (pps ppx_jane)))
