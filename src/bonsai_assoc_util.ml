@@ -113,8 +113,7 @@ let reindex_exn map ~value_in_equal ~value_out_equal ~new_key_comparator ~f =
   Bonsai.Value.map map ~f:(fun new_value ->
     let new_result =
       match !last_value with
-      | None ->
-        Map.of_alist_exn new_key_comparator (List.map ~f (Map.to_alist new_value))
+      | None -> Map.of_alist_exn new_key_comparator (List.map ~f (Map.to_alist new_value))
       | Some last_value ->
         Map.fold_symmetric_diff
           last_value
